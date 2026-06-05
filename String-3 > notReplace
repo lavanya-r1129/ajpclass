@@ -1,0 +1,24 @@
+public String notReplace(String str) {
+  String result = "";
+  int i = 0;
+  
+  while (i < str.length()) {
+    if (i <= str.length() - 2 && str.substring(i, i + 2).equals("is")) {
+      // Found "is", check if it's a standalone word
+      boolean leftOK = i == 0 || !Character.isLetter(str.charAt(i - 1));
+      boolean rightOK = i + 2 == str.length() || !Character.isLetter(str.charAt(i + 2));
+      
+      if (leftOK && rightOK) {
+        result += "is not";
+        i += 2; // skip past "is"
+        continue;
+      }
+    }
+    
+    // Not a standalone "is", just copy char
+    result += str.charAt(i);
+    i++;
+  }
+  
+  return result;
+}
