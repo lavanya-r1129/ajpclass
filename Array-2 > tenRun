@@ -1,0 +1,13 @@
+public int[] tenRun(int[] nums) {
+  int current = -1; // sentinel: no multiple of 10 seen yet
+  
+  for (int i = 0; i < nums.length; i++) {
+    if (nums[i] % 10 == 0) {
+      current = nums[i]; // update to new multiple of 10
+    } else if (current!= -1) {
+      nums[i] = current; // overwrite with current multiple
+    }
+  }
+  
+  return nums;
+}
