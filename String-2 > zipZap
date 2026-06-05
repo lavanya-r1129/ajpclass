@@ -1,0 +1,15 @@
+public String zipZap(String str) {
+  String result = "";
+  
+  for (int i = 0; i < str.length(); i++) {
+    // If we find z_p pattern, add z and p, skip the middle
+    if (i <= str.length() - 3 && str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
+      result += "zp";
+      i += 2; // jump past the whole z_p sequence
+    } else {
+      result += str.charAt(i);
+    }
+  }
+  
+  return result;
+}
