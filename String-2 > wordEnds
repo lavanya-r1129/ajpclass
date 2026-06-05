@@ -1,0 +1,19 @@
+public String wordEnds(String str, String word) {
+  String result = "";
+  int len = word.length();
+  
+  for (int i = 0; i <= str.length() - len; i++) {
+    if (str.substring(i, i + len).equals(word)) {
+      // Check char before
+      if (i > 0) {
+        result += str.charAt(i - 1);
+      }
+      // Check char after  
+      if (i + len < str.length()) {
+        result += str.charAt(i + len);
+      }
+    }
+  }
+  
+  return result;
+}
