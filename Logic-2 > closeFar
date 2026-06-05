@@ -1,0 +1,8 @@
+public boolean closeFar(int a, int b, int c) {
+  boolean bClose = Math.abs(a - b) <= 1;
+  boolean cClose = Math.abs(a - c) <= 1;
+  boolean bFarAC = Math.abs(a - b) >= 2 && Math.abs(c - b) >= 2;
+  boolean cFarAB = Math.abs(a - c) >= 2 && Math.abs(b - c) >= 2;
+  
+  return (bClose && cFarAB) || (cClose && bFarAC);
+}
