@@ -1,0 +1,22 @@
+public int[] zeroFront(int[] nums) {
+  int[] result = new int[nums.length];
+  int pos = 0;
+  
+  // First pass: put all zeros at front
+  for (int i = 0; i < nums.length; i++) {
+    if (nums[i] == 0) {
+      result[pos] = 0;
+      pos++;
+    }
+  }
+  
+  // Second pass: put all non-zeros after
+  for (int i = 0; i < nums.length; i++) {
+    if (nums[i]!= 0) {
+      result[pos] = nums[i];
+      pos++;
+    }
+  }
+  
+  return result;
+}
