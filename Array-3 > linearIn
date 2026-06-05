@@ -1,0 +1,12 @@
+public boolean linearIn(int[] outer, int[] inner) {
+  int j = 0; // index for inner
+  
+  for (int i = 0; i < outer.length && j < inner.length; i++) {
+    if (outer[i] == inner[j]) {
+      j++; // found this inner element, look for next
+    }
+  }
+  
+  // if we matched all of inner, j will equal inner.length
+  return j == inner.length;
+}
