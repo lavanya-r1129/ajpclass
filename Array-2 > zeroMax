@@ -1,0 +1,15 @@
+public int[] zeroMax(int[] nums) {
+  int maxOddRight = 0;
+  
+  for (int i = nums.length - 1; i >= 0; i--) {
+    if (nums[i] % 2 == 1) {
+      maxOddRight = Math.max(maxOddRight, nums[i]);
+    } else if (nums[i] == 0) {
+      if (maxOddRight!= 0) {
+        nums[i] = maxOddRight;
+      }
+    }
+  }
+  
+  return nums;
+}
