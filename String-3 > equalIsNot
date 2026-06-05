@@ -1,0 +1,18 @@
+public boolean equalIsNot(String str) {
+  int countIs = 0;
+  int countNot = 0;
+  int pos = 0;
+  
+  while ((pos = str.indexOf("is", pos)) != -1) {
+    countIs++;
+    pos += 2;
+  }
+  
+  pos = 0;
+  while ((pos = str.indexOf("not", pos)) != -1) {
+    countNot++;
+    pos += 3;
+  }
+  
+  return countIs == countNot;
+}
