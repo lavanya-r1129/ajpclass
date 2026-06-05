@@ -1,0 +1,16 @@
+public String sameEnds(String string) {
+  int len = string.length();
+  
+  // Check from longest possible down to 1
+  // Max length is len/2 to avoid overlap
+  for (int i = len / 2; i > 0; i--) {
+    String start = string.substring(0, i);
+    String end = string.substring(len - i);
+    
+    if (start.equals(end)) {
+      return start;
+    }
+  }
+  
+  return "";
+}
