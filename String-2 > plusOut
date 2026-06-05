@@ -1,0 +1,18 @@
+public String plusOut(String str, String word) {
+  String result = "";
+  int i = 0;
+  
+  while (i < str.length()) {
+    int match = str.indexOf(word, i);
+    
+    if (match == i) {
+      result += word;
+      i += word.length();
+    } else {
+      result += "+";
+      i++;
+    }
+  }
+  
+  return result;
+}
