@@ -1,0 +1,20 @@
+public int sum67(int[] nums) {
+  int sum = 0;
+  boolean inSection = false;
+  
+  for (int i = 0; i < nums.length; i++) {
+    if (nums[i] == 6) {
+      inSection = true;
+    }
+    
+    if (!inSection) {
+      sum += nums[i];
+    }
+    
+    if (inSection && nums[i] == 7) {
+      inSection = false;
+    }
+  }
+  
+  return sum;
+}
