@@ -1,0 +1,12 @@
+public boolean xyzThere(String str) {
+  for (int i = 0; i < str.length() - 2; i++) {
+    if (str.substring(i, i + 3).equals("xyz")) {
+      // Check if there's no '.' right before it
+      if (i == 0 || str.charAt(i - 1) != '.') {
+        return true; // found valid "xyz"
+      }
+    }
+  }
+  
+  return false; // no valid "xyz" found
+}
