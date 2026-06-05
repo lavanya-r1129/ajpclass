@@ -1,0 +1,19 @@
+public int[] withoutTen(int[] nums) {
+  int pos = 0;
+  
+  // Shift non-10s to front
+  for (int i = 0; i < nums.length; i++) {
+    if (nums[i]!= 10) {
+      nums[pos] = nums[i];
+      pos++;
+    }
+  }
+  
+  // Fill remaining spots with 0
+  while (pos < nums.length) {
+    nums[pos] = 0;
+    pos++;
+  }
+  
+  return nums;
+}
