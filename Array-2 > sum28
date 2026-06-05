@@ -1,0 +1,7 @@
+public boolean sum28(int[] nums) {
+  int count = 0;
+  for (int n : nums) {
+    if (n == 2) count++;
+  }
+  return count == 4;
+}
