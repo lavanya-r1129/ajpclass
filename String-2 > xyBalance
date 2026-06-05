@@ -1,0 +1,7 @@
+public boolean xyBalance(String str) {
+  int lastX = str.lastIndexOf('x');
+  int lastY = str.lastIndexOf('y');
+  
+  // If no x, it's balanced. If there is an x, need y after it
+  return lastX == -1 || lastY > lastX;
+}
