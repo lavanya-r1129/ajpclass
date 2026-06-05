@@ -1,0 +1,18 @@
+public String withoutString(String base, String remove) {
+  String result = "";
+  int len = remove.length();
+  int i = 0;
+  
+  while (i < base.length()) {
+    // Check if remove matches here, ignoring case
+    if (i <= base.length() - len && 
+        base.substring(i, i + len).equalsIgnoreCase(remove)) {
+      i += len; // skip over the removed part
+    } else {
+      result += base.charAt(i);
+      i++;
+    }
+  }
+  
+  return result;
+}
