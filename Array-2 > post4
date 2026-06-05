@@ -1,0 +1,17 @@
+public int[] post4(int[] nums) {
+  int i = nums.length - 1;
+  
+  // Find last 4 by going backwards
+  while (nums[i]!= 4) {
+    i--;
+  }
+  
+  // i is now index of last 4
+  int[] result = new int[nums.length - 1 - i];
+  
+  for (int j = 0; j < result.length; j++) {
+    result[j] = nums[i + 1 + j];
+  }
+  
+  return result;
+}
